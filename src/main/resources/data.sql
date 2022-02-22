@@ -1,0 +1,7 @@
+
+-- LOAD DATA INFILE 'schools.csv'
+-- INTO TABLE school
+-- FIELDS TERMINATED BY ','
+-- ENCLOSED BY ''
+-- LINES TERMINATED BY '/n'
+-- IGNORE 1 ROWS;

@@ -1,0 +1,33 @@
+version: '3.6'
+
+services:
+  postgres:
+    build:
+      context: db/server
+      dockerfile: Dockerfile
+    ports:
+      - "8001:5432"
+    networks:
+      - uid4oe
+  python_seed:
+    environment:
+      - HOST=postgres
+      - PORT=5432
+      - PG_USER=postgres
+      - PG_PASSWORD=postgres
+      - DATABASE=platform
+    build:
+      context: db/src
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    networks:
+      - uid4oe
+
+networks:
+  uid4oe:
+    external: true
+  
+  
+
+    
